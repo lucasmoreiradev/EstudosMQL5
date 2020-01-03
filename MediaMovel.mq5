@@ -1,11 +1,4 @@
-//+------------------------------------------------------------------+
-//|                                                   MediaMovel.mq5 |
-//|                                                  Rafael Fenerick |
-//|                           https://www.youtube.com/RafaelFenerick |
-//|                                    rafaelfenerick.mql5@gmail.com |
-//+------------------------------------------------------------------+
-#property copyright "Rafael Fenerick"
-#property link      "rafaelfenerick.mql5@gmail.com"
+#property copyright "Lucas Moreira"
 #property version   "1.00"
 
 /*
