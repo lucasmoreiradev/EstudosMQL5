@@ -94,7 +94,7 @@ void OnTick()
    
    if(HorarioEntrada())
    {
-      if(SemPosicao())
+      if(SemPosicao() && isNewBar())
       {
          int resultado_cruzamento = Cruzamento();
          if(resultado_cruzamento == 1)
@@ -245,4 +245,23 @@ void BreakEven()
       negocio.PositionModify(position_ticket, preco_abertura, tp_atual);
    }
    
+}
+
+bool isNewBar()
+{
+   static datetime last_time = 0;
+   datetime lastbar_time = (datetime) SeriesInfoInteger(Symbol(), Period(), SERIES_LASTBAR_DATE);
+   if (last_time == 0)
+      {
+         last_time = lastbar_time;
+         return(false);
+      }
+      
+   if (last_time!=lastbar_time)
+      {
+         last_time=lastbar_time;
+         Print("Eh um novo candle...");
+         return(true);
+      }
+   return(false);
 }
